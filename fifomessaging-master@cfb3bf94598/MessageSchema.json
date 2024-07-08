@@ -1,0 +1,292 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:com:centrica:bg:pulse:fifomessaging:entity:MessageRequest",
+  "properties" : {
+    "message" : {
+      "type" : "object",
+      "id" : "urn:jsonschema:com:centrica:bg:pulse:fifomessaging:entity:Message",
+      "properties" : {
+        "data" : {
+          "type" : "object",
+          "id" : "urn:jsonschema:com:google:gson:JsonObject",
+          "properties" : {
+            "asByte" : {
+              "type" : "integer"
+            },
+            "asJsonObject" : {
+              "type" : "object",
+              "$ref" : "urn:jsonschema:com:google:gson:JsonObject"
+            },
+            "asBigInteger" : {
+              "type" : "integer"
+            },
+            "jsonPrimitive" : {
+              "type" : "boolean"
+            },
+            "asCharacter" : {
+              "type" : "string"
+            },
+            "asNumber" : {
+              "type" : "number"
+            },
+            "asBigDecimal" : {
+              "type" : "number"
+            },
+            "jsonNull" : {
+              "type" : "boolean"
+            },
+            "asFloat" : {
+              "type" : "number"
+            },
+            "asLong" : {
+              "type" : "integer"
+            },
+            "asInt" : {
+              "type" : "integer"
+            },
+            "asJsonPrimitive" : {
+              "type" : "object",
+              "$ref" : "urn:jsonschema:com:google:gson:JsonPrimitive"
+            },
+            "asJsonNull" : {
+              "type" : "object",
+              "$ref" : "urn:jsonschema:com:google:gson:JsonNull"
+            },
+            "asShort" : {
+              "type" : "integer"
+            },
+            "asJsonArray" : {
+              "type" : "object",
+              "id" : "urn:jsonschema:com:google:gson:JsonArray",
+              "properties" : {
+                "asByte" : {
+                  "type" : "integer"
+                },
+                "asBigInteger" : {
+                  "type" : "integer"
+                },
+                "asJsonObject" : {
+                  "type" : "object",
+                  "$ref" : "urn:jsonschema:com:google:gson:JsonObject"
+                },
+                "asCharacter" : {
+                  "type" : "string"
+                },
+                "jsonPrimitive" : {
+                  "type" : "boolean"
+                },
+                "asNumber" : {
+                  "type" : "number"
+                },
+                "asBigDecimal" : {
+                  "type" : "number"
+                },
+                "jsonNull" : {
+                  "type" : "boolean"
+                },
+                "asFloat" : {
+                  "type" : "number"
+                },
+                "asLong" : {
+                  "type" : "integer"
+                },
+                "asInt" : {
+                  "type" : "integer"
+                },
+                "asJsonPrimitive" : {
+                  "type" : "object",
+                  "$ref" : "urn:jsonschema:com:google:gson:JsonPrimitive"
+                },
+                "asJsonNull" : {
+                  "type" : "object",
+                  "id" : "urn:jsonschema:com:google:gson:JsonNull",
+                  "properties" : {
+                    "asByte" : {
+                      "type" : "integer"
+                    },
+                    "asJsonObject" : {
+                      "type" : "object",
+                      "$ref" : "urn:jsonschema:com:google:gson:JsonObject"
+                    },
+                    "asBigInteger" : {
+                      "type" : "integer"
+                    },
+                    "jsonPrimitive" : {
+                      "type" : "boolean"
+                    },
+                    "asCharacter" : {
+                      "type" : "string"
+                    },
+                    "asNumber" : {
+                      "type" : "number"
+                    },
+                    "asBigDecimal" : {
+                      "type" : "number"
+                    },
+                    "jsonNull" : {
+                      "type" : "boolean"
+                    },
+                    "asFloat" : {
+                      "type" : "number"
+                    },
+                    "asLong" : {
+                      "type" : "integer"
+                    },
+                    "asInt" : {
+                      "type" : "integer"
+                    },
+                    "asJsonPrimitive" : {
+                      "type" : "object",
+                      "id" : "urn:jsonschema:com:google:gson:JsonPrimitive",
+                      "properties" : {
+                        "asByte" : {
+                          "type" : "integer"
+                        },
+                        "asBigInteger" : {
+                          "type" : "integer"
+                        },
+                        "asJsonObject" : {
+                          "type" : "object",
+                          "$ref" : "urn:jsonschema:com:google:gson:JsonObject"
+                        },
+                        "asCharacter" : {
+                          "type" : "string"
+                        },
+                        "string" : {
+                          "type" : "boolean"
+                        },
+                        "jsonPrimitive" : {
+                          "type" : "boolean"
+                        },
+                        "asNumber" : {
+                          "type" : "number"
+                        },
+                        "asBigDecimal" : {
+                          "type" : "number"
+                        },
+                        "jsonNull" : {
+                          "type" : "boolean"
+                        },
+                        "asFloat" : {
+                          "type" : "number"
+                        },
+                        "asLong" : {
+                          "type" : "integer"
+                        },
+                        "asInt" : {
+                          "type" : "integer"
+                        },
+                        "number" : {
+                          "type" : "boolean"
+                        },
+                        "asJsonPrimitive" : {
+                          "type" : "object",
+                          "$ref" : "urn:jsonschema:com:google:gson:JsonPrimitive"
+                        },
+                        "boolean" : {
+                          "type" : "boolean"
+                        },
+                        "asJsonNull" : {
+                          "type" : "object",
+                          "$ref" : "urn:jsonschema:com:google:gson:JsonNull"
+                        },
+                        "asShort" : {
+                          "type" : "integer"
+                        },
+                        "asDouble" : {
+                          "type" : "number"
+                        },
+                        "asJsonArray" : {
+                          "type" : "object",
+                          "$ref" : "urn:jsonschema:com:google:gson:JsonArray"
+                        },
+                        "asString" : {
+                          "type" : "string"
+                        },
+                        "jsonObject" : {
+                          "type" : "boolean"
+                        },
+                        "jsonArray" : {
+                          "type" : "boolean"
+                        },
+                        "asBoolean" : {
+                          "type" : "boolean"
+                        }
+                      }
+                    },
+                    "asJsonNull" : {
+                      "type" : "object",
+                      "$ref" : "urn:jsonschema:com:google:gson:JsonNull"
+                    },
+                    "asShort" : {
+                      "type" : "integer"
+                    },
+                    "asJsonArray" : {
+                      "type" : "object",
+                      "$ref" : "urn:jsonschema:com:google:gson:JsonArray"
+                    },
+                    "asDouble" : {
+                      "type" : "number"
+                    },
+                    "jsonObject" : {
+                      "type" : "boolean"
+                    },
+                    "asString" : {
+                      "type" : "string"
+                    },
+                    "jsonArray" : {
+                      "type" : "boolean"
+                    },
+                    "asBoolean" : {
+                      "type" : "boolean"
+                    }
+                  }
+                },
+                "asShort" : {
+                  "type" : "integer"
+                },
+                "asDouble" : {
+                  "type" : "number"
+                },
+                "asJsonArray" : {
+                  "type" : "object",
+                  "$ref" : "urn:jsonschema:com:google:gson:JsonArray"
+                },
+                "asString" : {
+                  "type" : "string"
+                },
+                "jsonObject" : {
+                  "type" : "boolean"
+                },
+                "jsonArray" : {
+                  "type" : "boolean"
+                },
+                "asBoolean" : {
+                  "type" : "boolean"
+                }
+              }
+            },
+            "asDouble" : {
+              "type" : "number"
+            },
+            "jsonObject" : {
+              "type" : "boolean"
+            },
+            "asString" : {
+              "type" : "string"
+            },
+            "jsonArray" : {
+              "type" : "boolean"
+            },
+            "asBoolean" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "group" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

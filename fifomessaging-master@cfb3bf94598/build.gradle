@@ -1,0 +1,159 @@
+buildscript {
+   /* repositories {
+        mavenCentral()
+    }*/
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/libs-snapshot" }
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: "war"
+apply plugin: 'application'
+apply plugin: "jacoco"
+
+group = 'com.centrica.bg.pulse'
+version = '1.0.0'
+
+description = "fifomessaging is a Spring Boot application RESTing on Couchbase 4 with Spring Data for Couchabase, Swagger and Cucumber."
+
+war.archiveName = "fifomessaging.war"
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "com.centrica.bg.pulse.fifomessaging.Application"
+applicationDefaultJvmArgs = ["-Xms1024m", "-Xmx3072m", "-XX:+UseConcMarkSweepGC", "-XX:+UseParNewGC"]
+
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/reports/coverage"
+    }
+}
+
+/*war {
+    manifest {
+        attributes "Main-Class": "com.centrica.bg.pulse.fifomessaging.Application"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+bootRepackage {
+    manifest {
+        attributes "Main-Class": "com.centrica.bg.pulse.fifomessaging.Application"
+    }
+    //mainClass = "com.centrica.bg.pulse.fifomessaging.Application"
+    withJarTask =jar
+    executable = true
+
+}*/
+jacoco {
+    applyTo run
+}
+
+task applicationCodeCoverageReport(type: JacocoReport) {
+    sourceSets sourceSets.main
+    executionData run
+}
+
+test {
+    reports.html.enabled = true
+    reports.junitXml.enabled = false
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+   // def SPRINGBOOT_VERSION = '1.3.3.RELEASE'
+ //   providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    def SPRINGBOOT_VERSION = '1.4.0.RELEASE'
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: SPRINGBOOT_VERSION) {
+        exclude(module: 'spring-boot-starter-logging')
+    }
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j', version: '1.3.3.RELEASE'
+
+    compile (group:'org.springframework.boot', name:'spring-boot-starter-activemq',version:'1.4.0.RELEASE'){
+        exclude(module: 'spring-boot-starter-logging')
+    }
+
+    compile group: 'org.apache.activemq', name: 'activemq-pool', version: '5.12.3'
+    compile group: 'org.apache.activemq', name: 'activemq-kahadb-store', version: '5.12.3'
+
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: SPRINGBOOT_VERSION) {
+        exclude(module: 'spring-boot-starter-logging')
+    }
+
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: SPRINGBOOT_VERSION) {
+        exclude(module: 'spring-boot-starter-logging')
+    }
+    compile 'com.google.code.gson:gson:2.6.2'
+    def COMMONSCOLLECTIONS_VERSION = '4.1'
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: COMMONSCOLLECTIONS_VERSION
+
+    def COMMONSBEANUTILS_VERSION = '1.8.3'
+    compile group: 'commons-beanutils', name: 'commons-beanutils-core', version: COMMONSBEANUTILS_VERSION
+
+    def COMMONSIO_VERSION = '2.4'
+    compile group: 'commons-io', name: 'commons-io', version: COMMONSIO_VERSION
+
+    def SWAGGERJERSEY2_VERSION = '1.5.7'
+    compile(group: 'io.swagger', name: 'swagger-jersey2-jaxrs', version: SWAGGERJERSEY2_VERSION) {
+        exclude(module: 'jersey-container-servlet-core')
+    }
+
+    def JSONPATCH_VERSION = '1.9'
+    compile group: 'com.github.fge', name: 'json-patch', version: JSONPATCH_VERSION
+
+    def HTTPCLIENT_VERSION = '4.5.1'
+    testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: HTTPCLIENT_VERSION
+
+
+    def GSON_VERSION = '2.5'
+    testCompile group: 'com.google.code.gson', name: 'gson', version: GSON_VERSION
+
+
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: SPRINGBOOT_VERSION) {
+        exclude(module: 'spring-boot-starter-logging')
+    }
+
+    def CUKES_VERSION = '1.2.4'
+    testCompile group: 'info.cukes', name: 'cucumber-core', version: CUKES_VERSION
+    testCompile group: 'info.cukes', name: 'cucumber-java', version: CUKES_VERSION
+    testCompile group: 'info.cukes', name: 'cucumber-junit', version: CUKES_VERSION
+    testCompile group: 'info.cukes', name: 'cucumber-spring', version: CUKES_VERSION
+
+    def POWERMOCK_VERSION = '1.6.4'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito', version: POWERMOCK_VERSION
+
+    /*compile(group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version:'5.11.1' ) {
+        exclude(module: 'spring-boot-starter-logging')
+    }*/
+
+    def ACTIVE_MQ_VERSION = '5.11.1'
+    //compile group: 'org.apache.activemq', name: 'activemq-client', version: ACTIVE_MQ_VERSION
+    //compile("org.springframework:spring-jms")
+    //compile("org.apache.activemq:activemq-broker")
+    compile 'com.github.fge:json-schema-validator:2.2.6'
+    compile 'com.fasterxml.jackson.module:jackson-module-jsonSchema:2.5.2'
+}
+
